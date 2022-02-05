@@ -2,6 +2,10 @@
   <p>
     <strong>Name:</strong>
     <%= menu.name %>
+      <% menu.dishes.each do |dish| %>
+        <%= dish.name %>
+        <%= dish.price %>
+      <% end %>
   </p>
 
 </div>
