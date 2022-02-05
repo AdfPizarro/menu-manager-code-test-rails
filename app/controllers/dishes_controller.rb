@@ -1,14 +1,5 @@
 class DishesController < ApplicationController
     before_action :set_menu, only: %i[ show edit update destroy ]
-
-    # GET /menus or /menus.json
-    def index
-      @menus = Menu.all.includes(:dishes)
-    end
-  
-    # GET /menus/1 or /menus/1.json
-    def show
-    end
   
     # GET /menus/new
     def new
@@ -18,11 +9,30 @@ class DishesController < ApplicationController
   
     # POST /menus or /menus.json
     def create
-      @menu = Menu.new(menu_params)
+      @dish = Dish.new(dish_params)
+
+      #chec if is better to do int in the controller ypep has to be
+
+      #create a scope in the db to get the total before inserting the values
+      #based on the new creted object to get onlt thar part of the menu
+      #use the include method to avoid n+1 problems
+
+      #add a section to return json erros based on the testing
+
+        #try to crate a method below to be executed in a more beuatifll way
+#error section
+
+      
+
+      if true #@dish. first letter= "E" get all the menu items and sum the prices
+          
+      else
+          
+      end
   
       respond_to do |format|
-        if @menu.save
-          format.html { redirect_to menu_url(@menu), notice: "Menu was successfully created." }
+        if @dish.save
+          format.html { redirect_to root, notice: "Menu was successfully created." }
           format.json { render :show, status: :created }
         else
           format.html { render :new, status: :unprocessable_entity }
