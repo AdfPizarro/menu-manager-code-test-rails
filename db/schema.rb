@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_203414) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["menu_id"], name: "index_dishes_on_menu_id"
+    t.index ["name"], name: "index_dishes_on_name", unique: true
   end
 
   create_table "menus", force: :cascade do |t|
