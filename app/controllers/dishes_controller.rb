@@ -11,25 +11,6 @@ class DishesController < ApplicationController
     def create
       @dish = Dish.new(dish_params)
 
-      #chec if is better to do int in the controller ypep has to be
-
-      #create a scope in the db to get the total before inserting the values
-      #based on the new creted object to get onlt thar part of the menu
-      #use the include method to avoid n+1 problems
-
-      #add a section to return json erros based on the testing
-
-        #try to crate a method below to be executed in a more beuatifll way
-#error section
-
-      
-
-      if true #@dish. first letter= "E" get all the menu items and sum the prices
-          
-      else
-          
-      end
-  
       respond_to do |format|
         if @dish.save
           format.html { redirect_to root, notice: "Menu was successfully created." }
