@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-          <% @menus.each do |menu| %>
-          <li><%= menu.name %></li>
-        <% end %>
-      </ul>
+
+  
 
   <div>
+  asdasdas
+  <div>
+    <%= form.collection_select :menu_id, @menus, :id, :name %>
     <%=form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
   
     <div>
     <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :price %>
   </div>
 
 

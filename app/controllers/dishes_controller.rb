@@ -13,25 +13,20 @@ class DishesController < ApplicationController
 
       respond_to do |format|
         if @dish.save
-          format.html { redirect_to root, notice: "Menu was successfully created." }
+          format.html { redirect_to root_path, notice: "Menu was successfully created." }
           format.json { render :show, status: :created }
         else
           format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @menu.errors, status: :unprocessable_entity }
+          format.json { render json: @dish.errors, status: :unprocessable_entity }
         end
       end
     end
   
-
-  
     private
       # Use callbacks to share common setup or constraints between actions.
-      def set_menu
-        @menu = Menu.find(params[:id])
-      end
-  
+
       # Only allow a list of trusted parameters through.
-      def menu_params
-        params.require(:dish).permit(:name, :price, :menu)
+      def dish_params
+        params.require(:dish).permit(:name, :price, :menu_id)
       end
 end
