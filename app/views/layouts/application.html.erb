@@ -12,6 +12,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+    <h1><%= link_to "Restaurant", menus_path %></h1>
+        <div class='nav_links'>
+          <div class="link"><%= link_to "New Menu", new_menu_path %></div>
+          <div class="link"><%= link_to "New Dish", new_dish_path %></div>
+          <div class="link"><%= link_to "Api", api_v1_menus_path %></div>
+        </div>
+    </nav>
+      <%= yield %>
   </body>
 </html>

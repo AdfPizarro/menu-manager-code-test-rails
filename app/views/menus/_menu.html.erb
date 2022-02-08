@@ -1,10 +1,12 @@
 <div id="<%= dom_id menu %>">
   <p>
-    <h2><%= menu.name %></h2>
+    <h2 class="menu_title"><%= menu.name %></h2>
       <% menu.dishes.each do |dish| %>
-        <div>
-        <%= dish.name %>
-        <%= dish.price %>
+        <div class="menu_element">
+        <div class="dish_name"><%= dish.name %></div>
+        <div class="dish_price">$ <%= dish.price %></div>
+        
+  
         </div>
       <% end %>
   </p>

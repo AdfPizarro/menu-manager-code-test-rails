@@ -1,7 +1,7 @@
 <%= form_with(model: dish) do |form| %>
   <% if dish.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(dish.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h2><%= pluralize(dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
 
       <ul>
         <% dish.errors.each do |error| %>
@@ -15,7 +15,7 @@
   
 
   <div>
-  asdasdas
+
   <div>
     <%= form.collection_select :menu_id, @menus, :id, :name %>
     <%=form.label :name, style: "display: block" %>
