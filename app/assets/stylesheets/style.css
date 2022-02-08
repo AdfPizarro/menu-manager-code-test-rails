@@ -9,6 +9,11 @@ h1{
     font-size:45px;
 }
 
+h2 {
+    margin-left: 50px;
+}
+
+
 a{
     text-decoration: none;
 }
@@ -54,4 +59,20 @@ nav{
 
 .link{
     padding: 0 20px;
+}
+
+form{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.button{
+    border: none;
+    background: rgb(120, 213, 215);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    color: rgb(247, 249, 249);
 }

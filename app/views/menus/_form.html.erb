@@ -1,7 +1,7 @@
 <%= form_with(model: menu) do |form| %>
   <% if menu.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h3><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h3>
 
       <ul>
         <% menu.errors.each do |error| %>
@@ -16,6 +16,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "button"%>
   </div>
 <% end %>
