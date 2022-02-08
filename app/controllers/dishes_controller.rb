@@ -10,6 +10,7 @@ class DishesController < ApplicationController
     # POST /menus or /menus.json
     def create
       @dish = Dish.new(dish_params)
+      @menus=Menu.all
 
       respond_to do |format|
         if @dish.save

@@ -14,7 +14,7 @@ class Dish < ApplicationRecord
 
   def dont_be_77
     if ( (menu.dishes.sum(:price)+price) == 77 )
-      errors.add(:name, "Menu price can't be 77")
+      errors.add(:price, "Menu price can't be 77")
     end
   end
 
