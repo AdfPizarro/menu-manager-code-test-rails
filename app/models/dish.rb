@@ -1,5 +1,6 @@
 class Dish < ApplicationRecord
   validates :name, :price, presence: true
+  validates :price, numericality: true
   validates :name, uniqueness: true
   validate :name_dont_start_with_e, :dont_be_77
   
