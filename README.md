@@ -4,6 +4,16 @@ Thank you for accepting our coding challenge. We ask that you spend about 2-3 ho
 
 However, in this challenging time, we understand that not everyone has the luxury of sitting down to work on a test uninterrupted. Therefore if you don't manage to implement all of the rules, please describes how you would achieve them or any improvement you would make in the email.
 
+## Notes
+
+Tests were done with rspec you can run it inside the docker container using the follwoing command
+
+`docker-compose exec web bundle exec rspec --format documentation`
+
+Capybara tests were skipped i was not able to run it inside dockers in the time frame tried a lot of ways and none of them work
+
+
+
 ## Submission
 
 Please submit your program as an online repository or downloadable link to your point of contact at OpenTable.
