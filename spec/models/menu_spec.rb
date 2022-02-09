@@ -2,7 +2,7 @@ require "spec_helper"
 
 RSpec.describe Menu, :type => :model do
 
-  before :each do
+  before :all do
     @Menu = Menu.create(name: "Dummy Menu")
   end
 
@@ -11,11 +11,11 @@ RSpec.describe Menu, :type => :model do
   end
 
   it "is valid with a valid name" do
-    expect(Menu.new(name: "Test Menu")).to be_valid
+    expect(Menu.new(name: "Dummy Menu")).to_not be_valid
   end
 
   it "return error when the name is duplicated" do
-    expect(Menu.new(name: "Dummy Menu")).to_not be_valid
+    expect(Menu.new(name: "TEST Menu")).to be_valid
   end
 
   it "return error when the name is an empty space" do

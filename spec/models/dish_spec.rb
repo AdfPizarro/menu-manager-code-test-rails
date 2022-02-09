@@ -27,7 +27,7 @@ RSpec.describe Dish, :type => :model do
     end
 
     it "return error when the menu doesn't exist" do
-        expect(Dish.new(name: "Test Dish", price: 1, menu_id: 2)).to_not be_valid
+        expect(Dish.new(name: "Test Dish", price: 1, menu_id: 100)).to_not be_valid
     end
 
     it "return error when the price is not a number" do
@@ -39,8 +39,17 @@ RSpec.describe Dish, :type => :model do
     end
 
     it "return error when name is an empty space" do
-        expect(Dish.new(name: "",price: "a", menu_id: 1)).to_not be_valid
+        expect(Dish.new(name: "",price: 1, menu_id: 1)).to_not be_valid
     end
+
+    it "return error when name starts with E" do
+        expect(Dish.new(name: "Elephant",price: 1, menu_id: 1)).to_not be_valid
+    end
+
+    it "return error when name starts with e" do
+        expect(Dish.new(name: "elephant",price: 1, menu_id: 1)).to_not be_valid
+    end
+
 
 
 
