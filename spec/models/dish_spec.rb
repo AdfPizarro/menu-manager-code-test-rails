@@ -1,11 +1,9 @@
 require_relative '../rails_helper.rb'
 
-
-
 RSpec.describe Dish, :type => :model do
 
 
-    before :each do
+    before :all do
         @Menu = Menu.create(name: "Dummy Menu")
         @Dish = Dish.create(name: "Dummy dish", price: 1, menu_id: 1)
     end
