@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  before_action :set_menu, only: %i[ show edit update destroy ]
+  before_action :set_menu, only: %i[show edit update destroy]
 
   # GET /menus or /menus.json
   def index
@@ -17,7 +17,7 @@ class MenusController < ApplicationController
 
     respond_to do |format|
       if @menu.save
-        format.html { redirect_to root_path, notice: "Menu was successfully created." }
+        format.html { redirect_to root_path, notice: 'Menu was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -25,13 +25,14 @@ class MenusController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_menu
-      @menu = Menu.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def menu_params
-      params.require(:menu).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_menu
+    @menu = Menu.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def menu_params
+    params.require(:menu).permit(:name)
+  end
 end
